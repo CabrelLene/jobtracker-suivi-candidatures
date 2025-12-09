@@ -825,33 +825,33 @@ textarea {
   line-height: 1.4;
 }
 
-/* AUTH SCREEN */
+/* AUTH SCREEN – version épurée, plus produit, moins IA flashy */
 
 .auth-wrapper {
   min-height: 100vh;
   padding: 1.8rem 1.4rem;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
-  background: var(--bg-body);
+  background: radial-gradient(circle at top left, #020617 0, #020617 45%, #000 100%);
 }
 
 @media (max-width: 768px) {
   .auth-wrapper {
-    padding: 1.1rem 0.7rem 1.3rem;
+    padding: 1.2rem 0.9rem;
   }
 }
 
 .auth-shell {
   width: 100%;
-  max-width: 980px;
+  max-width: 880px;
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  background: radial-gradient(circle at top left, #020617, #020617 52%, #000 100%);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  background: #020617;
 }
 
 @media (max-width: 900px) {
@@ -860,16 +860,17 @@ textarea {
   }
 }
 
+/* Colonne gauche : branding + message */
+
 .auth-side {
-  padding: 1.6rem 1.7rem;
+  padding: 1.6rem 1.8rem;
 }
 
 .auth-side-left {
-  border-right: 1px solid rgba(15, 23, 42, 0.95);
+  border-right: 1px solid rgba(15, 23, 42, 0.9);
   background:
-    radial-gradient(circle at top left, rgba(79, 70, 229, 0.4), transparent 60%),
-    radial-gradient(circle at bottom, rgba(236, 72, 153, 0.18), transparent 60%),
-    #020617;
+    radial-gradient(circle at top left, rgba(15, 23, 42, 1), transparent 60%),
+    linear-gradient(to bottom right, #020617, #020617);
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
@@ -878,15 +879,8 @@ textarea {
 @media (max-width: 900px) {
   .auth-side-left {
     border-right: none;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.9);
   }
-}
-
-.auth-side-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at top, #020617, #020617 55%, #000 100%);
 }
 
 .auth-brand {
@@ -898,15 +892,15 @@ textarea {
 .auth-logo-mark {
   width: 38px;
   height: 38px;
-  border-radius: 1rem;
-  background: radial-gradient(circle at top, #f9fafb, #4f46e5);
+  border-radius: 0.9rem;
+  background: #e5e7eb;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: 0.95rem;
   color: #020617;
-  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.96);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.65);
 }
 
 .auth-brand-text {
@@ -924,54 +918,67 @@ textarea {
 
 .auth-brand-subtitle {
   font-size: 0.78rem;
-  color: rgba(226, 232, 240, 0.88);
+  color: rgba(209, 213, 219, 0.9);
 }
 
 .auth-copy h1 {
-  margin: 1.1rem 0 0.4rem;
-  font-size: 1.5rem;
+  margin: 0.9rem 0 0.35rem;
+  font-size: 1.45rem;
+  font-weight: 600;
 }
 
 .auth-copy p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  max-width: 480px;
+  max-width: 460px;
+  line-height: 1.5;
 }
 
 .auth-list {
-  margin: 1rem 0 0;
+  margin: 0.9rem 0 0;
   padding-left: 1.1rem;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   color: #e5e7eb;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.3rem;
+}
+
+/* Colonne droite : carte de login */
+
+.auth-side-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #020617, #020617 55%, #000 100%);
 }
 
 .auth-card {
   width: 100%;
   max-width: 360px;
-  background: rgba(15, 23, 42, 0.96);
+  background: rgba(15, 23, 42, 0.98);
   border-radius: var(--radius-lg);
   padding: 1.3rem 1.3rem 1.2rem;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  box-shadow: var(--shadow-subtle);
+  border: 1px solid rgba(55, 65, 81, 0.85);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.95);
 }
+
+/* Toggle login / register */
 
 .auth-toggle {
   display: inline-flex;
-  padding: 0.18rem;
+  padding: 0.16rem;
   border-radius: 999px;
   background: rgba(15, 23, 42, 1);
-  border: 1px solid rgba(55, 65, 81, 0.95);
+  border: 1px solid rgba(55, 65, 81, 0.9);
   margin-bottom: 0.9rem;
 }
 
 .auth-toggle-btn {
   border: none;
   background: transparent;
-  padding: 0.3rem 0.9rem;
+  padding: 0.26rem 0.9rem;
   border-radius: 999px;
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -983,10 +990,12 @@ textarea {
 }
 
 .auth-toggle-btn-active {
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: #f9fafb;
+  background: #111827;
+  color: #e5e7eb;
   transform: translateY(-1px);
 }
+
+/* Header de la carte */
 
 .auth-card-header h2 {
   margin: 0;
@@ -1000,6 +1009,8 @@ textarea {
   color: var(--text-muted);
 }
 
+/* Formulaire */
+
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -1008,11 +1019,11 @@ textarea {
 
 .auth-submit {
   width: 100%;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
 }
 
 .auth-footnote {
-  margin: 0.7rem 0 0;
+  margin: 0.75rem 0 0;
   font-size: 0.75rem;
   color: var(--text-muted);
 }
@@ -1021,11 +1032,11 @@ textarea {
   margin-bottom: 0.8rem;
 }
 
-/* LOADER ÉTAT AUTH */
+/* Loader pendant l'init Firebase */
 
 .loader-screen {
   min-height: 100vh;
-  background: var(--bg-body);
+  background: radial-gradient(circle at top left, #020617 0, #020617 45%, #000 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1069,4 +1080,3 @@ textarea {
     opacity: 1;
   }
 }
-
